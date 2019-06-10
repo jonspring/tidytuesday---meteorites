@@ -21,7 +21,7 @@ meteorites_anim <- meteorites %>%
          !is.na(long), 
          fall == "Fell") %>%
   mutate(start_lat = 0,
-         start_long = long + 0) %>%
+         start_long = long + 90) %>%
   uncount(fall_frames + hit_frames, .id = "id_frame") %>%
   mutate(anim_yr = year - (fall_frames - id_frame),
          fall_pct = id_frame / fall_frames,
